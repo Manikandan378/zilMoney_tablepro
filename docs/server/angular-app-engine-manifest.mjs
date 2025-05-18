@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/zilMoney_tablepro',
+  basePath: '/',
   supportedLocales: {
   "en-US": ""
 },
