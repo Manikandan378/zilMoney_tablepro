@@ -1,31 +1,37 @@
+<div class="container">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <input formControlName="name" placeholder="Name" required />
+    <input formControlName="email" placeholder="Email" required />
+        <input formControlName="imageUrl" placeholder="imageUrl" required />
+    <button type="submit">{{ editingUserId ? 'Update' : 'Add' }}</button>
+    <button type="button" (click)="cancelEdit()" *ngIf="editingUserId">Cancel</button>
+  </form>
 
-<div style="padding:50px">
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="border: solid black !important;">
-
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-         
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} <br>{{element.email}} </td>
-    </ng-container>
-  
-    <!-- Weight Column -->
-    <ng-container matColumnDef="companyName">
-      <th mat-header-cell *matHeaderCellDef> Company Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.company.name}} </td>
-    </ng-container>
-  
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="designation">
-      <th mat-header-cell *matHeaderCellDef> Designation </th>
-      <td mat-cell *matCellDef="let element"> {{element.company.designation}} </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <table border="1" style="margin-top: 20px; width: 100%;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+            <th mat-header-cell *matHeaderCellDef> Image </th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td mat-cell *matCellDef="let user">
+      <img [src]="user.imageUrl" width="50" />
+    </td>
+        <td>
+          <button (click)="editUser(user)">Edit</button>
+          <button (click)="deleteUser(user.id)">Delete</button>
+        </td>
+        
+      </tr>
+    </tbody>
   </table>
 </div>
-  
+<button mat-raised-button color="primary" (click)="openDialog()">Add User</button>
+
+
