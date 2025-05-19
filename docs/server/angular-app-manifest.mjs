@@ -2,19 +2,19 @@
 export default {
   bootstrap: () => import('./main.server.mjs').then(m => m.default),
   inlineCriticalCss: true,
-  baseHref: '/',
+  baseHref: '/zilMoney_tablepro/',
   locale: undefined,
   routes: [
   {
     "renderMode": 2,
-    "route": "/"
+    "route": "/zilMoney_tablepro"
   }
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 23566, hash: '0ff11546802bee5ef22a9e6758623f80c5f4dc878aa5f18da503c26ec070a9c6', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 17140, hash: '208a4d2681523c31cc95afe940b8c41447d2f15fbad4e6d6a5133154d371e4b7', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'index.html': {size: 45943, hash: '35ed03c42f9618bcdf9fe31b52ac49e4c22ff6484a498d69765b0923fde5a716', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
+    'index.csr.html': {size: 23584, hash: '4f43f98043d6e1f345d74b728b7ed2f1b64f99847d31e2a01ce9ecddae3d2121', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 17158, hash: '27767f0b8bdd006192d9e5b5d06e1381cd31d8054e5d6f43a3708560359e6a56', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'index.html': {size: 45961, hash: 'a02150c49389a12e3b44e731024bf078975b44edd9ddf5705885cc8f5113e71b', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
     'styles-36AW6TKX.css': {size: 6979, hash: 'vY6tjD/ce7M', text: () => import('./assets-chunks/styles-36AW6TKX_css.mjs').then(m => m.default)}
   },
 };
